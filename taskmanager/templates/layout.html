@@ -15,13 +15,17 @@
 </head>
 <body>
     <nav>
-        <a href="/">home</a> |
-        <a href="/about">about</a> |
-        <a href="{% url 'posts:list' %}">posts</a> |
-        <a href="{% url 'user:user_list' %}">users</a> |
-        <a href="{% url 'user:registration' %}">register</a> |
-        <a href="{% url 'user:login' %}">login</a> |
+        <a href="/tikets">Tikets</a> |
+        <a href="/about">About</a> |
+        {% comment %} <a href="{% url 'tiket:list' %}">posts</a> | {% endcomment %}
+        {% comment %} <a href="{% url 'user:user_list' %}">users</a> | {% endcomment %}
+        {% comment %} <a href="{% url 'user:registration' %}">register</a> | {% endcomment %}
+        <a href="{% url 'user:login' %}">Login</a> 
+        {% comment %} <form class="logout" action="{% url 'user:logout' %}" method='POST'>
+            {% csrf_token %}
+            <button title="logout">logout</button> {% endcomment %}
     </nav>
+
     <main>
         {% block content %}
         {% endblock content %}

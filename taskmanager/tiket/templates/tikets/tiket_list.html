@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block title %}
+    Tikets
+{% endblock title %}
+{% block content %}
+    <h1>Tikets</h1>
+    {% for tiket in tikets %}
+        <div class="tiket">
+            <p> 
+                {{ tiket.body}}
+            </p>
+            <p class="signature">
+                {{ tiket.date}}, {{ tiket.owner}}
+            </p>
+            {% if tiket.status %}
+                <p class="complete">
+                    Выполненно
+                </p>
+            {% else %}
+                <p class="incomplete">
+                    Не выполненно
+                </p>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock content %}

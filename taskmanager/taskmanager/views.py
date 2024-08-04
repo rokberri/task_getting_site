@@ -1,11 +1,10 @@
 # from django.http import HttpResponse
 from django.shortcuts import render
+from tiket.views import tikets_list
 
 def hame_page(request):
-    # return HttpResponse('Hello Word!')
-    return render(request, 'home.html')
+    return tikets_list(request)
 
 def about(request):
-    # return HttpResponse('About page')
     return render(request, 'about.html')
 

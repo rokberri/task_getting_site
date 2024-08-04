@@ -25,7 +25,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.hame_page),
     path('about/', views.about),
-    path('posts/', include('posts.urls')),
+    path('tikets/', include('tiket.urls')),
     path('user/', include('user.urls')),
 ]
 
