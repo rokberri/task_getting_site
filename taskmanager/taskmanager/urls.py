@@ -23,9 +23,9 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.hame_page),
+    # path('', views.hame_page),
     path('about/', views.about),
-    path('tikets/', include('tiket.urls')),
+    path('', include('tiket.urls')),
     path('user/', include('user.urls')),
 ]
 

@@ -3,7 +3,9 @@
     Tikets
 {% endblock title %}
 {% block content %}
-    <h1>Tikets</h1>
+    <a href="{% url 'tiket:create_ticket' %}">Добавить задачу</a>
+
+    <h1>Задачи</h1>
     {% for tiket in tikets %}
         <div class="tiket">
             <p> 
