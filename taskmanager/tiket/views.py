@@ -27,3 +27,15 @@ def add_ticket(request):
 # def tiket_page(request, slug):
 #     tikets = Tiket.objects.get(slug=slug)
 #     return render(request, 'tikets/tiket_page.html', {'tikets': tikets})
+def test_func(request):
+
+    if request.user.is_authenticated:
+        return HttpResponse('authenticated')
+    else: 
+        return HttpResponse('not authenticated')
+    
+def update(request, ticket_id):
+    ticket =Tiket.objects.get(id=ticket_id)
+    ticket.status = not ticket.status
+    ticket.save()
+    return redirect("tiket:list")

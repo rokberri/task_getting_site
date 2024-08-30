@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
     <title>
-        {% block title %}
+        {% block title %}   
             Django App
         {% endblock title %}
     </title>
@@ -15,12 +15,10 @@
 </head>
 <body>
     <nav>
-        <a href="{% url 'tiket:list' %}">Tikets</a> |
-        <a href="/about">About</a> |
-        {% comment %} <a href="{% url 'tiket:list' %}">posts</a> | {% endcomment %}
-        {% comment %} <a href="{% url 'user:user_list' %}">users</a> | {% endcomment %}
-        {% comment %} <a href="{% url 'user:registration' %}">register</a> | {% endcomment %}
-        <a href="{% url 'user:login' %}">Login</a> 
+        <a href="{% url 'tiket:list' %}">Задачи</a> |
+        <a href="{% url 'info' %}">О сайте</a> |
+        <a href="{% url 'user:login' %}">Вход</a> |
+        <a href="{% url 'tiket:test' %}">Тестовая страница</a>
         {% comment %} <form class="logout" action="{% url 'user:logout' %}" method='POST'>
             {% csrf_token %}
             <button title="logout">logout</button> {% endcomment %}

@@ -14,15 +14,29 @@
             <p class="signature">
                 {{ tiket.date}}, {{ tiket.owner}}
             </p>
-            {% if tiket.status %}
-                <p class="complete">
-                    Выполненно
-                </p>
+            <p>
+                *
+                ID:{{ tiket.id }}
+                *
+            </p>
+            {% if request.user.is_authenticated %}
+                {% if tiket.status %}
+                    <span class="complete">Завершено</span>
+                    <a href="{% url 'tiket:update' ticket_id=tiket.id %}"> START </a>
+                {% else %}
+                    <span class="incomplete" >Не завершено</span>  
+                    <a href="{% url 'tiket:update' ticket_id=tiket.id %}"> END </a>
+                {% endif %}
             {% else %}
-                <p class="incomplete">
-                    Не выполненно
-                </p>
+                {% if tiket.status %}
+                    <span class="complete">Завершено</span>
+                {% else %}
+                    <span class="incomplete" >Не завершено</span>  
+                {% endif %}
             {% endif %}
         </div>
     {% endfor %}
 {% endblock content %}
+
+
+

@@ -2,8 +2,8 @@
 from django.shortcuts import render
 from tiket.views import tikets_list
 
-def hame_page(request):
-    return tikets_list(request)
+# def home_page(request):
+#     return render(request, 'about.html')
 
 def about(request):
     return render(request, 'about.html')
